@@ -6,9 +6,6 @@ var mongoose = require('mongoose');
 
 
 var User = mongoose.model('Users');
-var auth = jwt({secret: process.env.jwtSecret, userProperty: 'payload'});
-
-
 /**
  *   Registers a new account
  *
@@ -38,10 +35,6 @@ var auth = jwt({secret: process.env.jwtSecret, userProperty: 'payload'});
  **/
 
 router.post('/login',function(req,res,next){
-	let user = {
-		email: req.body.email,
-		password: req.body.password
-	};
 	passport.authenticate('local',function(err, user, info){
 		if(err){
             return next(err);
