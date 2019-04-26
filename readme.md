@@ -20,7 +20,10 @@ Finally in your terminal type:
 
 #Fire up the app#
 * npm install
+* cd client && npm install
+* cd .. 
 * npm start
+* API & React app should now be running
 
 #For Development#
 * npm install -g nodemon
