@@ -22,5 +22,9 @@ Finally in your terminal type:
 * npm install
 * npm start
 
+#For Development#
+* npm install -g nodemon
+* nodemon bin/www 
+
 #(Optional) Download MongoHub as a MONGODB GUI interface#
 * https://github.com/jeromelebel/MongoHub-Mac

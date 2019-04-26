@@ -1,11 +1,14 @@
 var passport = require('passport');
-var LocalStrategy = require('passport-http-bearer').Strategy;
+var LocalStrategy = require('passport-local').Strategy;
 var mongoose = require('mongoose');
-var User = mongoose.model('User');
+var User = mongoose.model('Users');
 
-passport.use(new BearerStrategy(
-    function (token, done) {
-        User.findOne({token: token}).exec(function (err, user) {
+passport.use(new LocalStrategy({
+    usernameField: 'email',
+    passwordField: 'password'
+},
+    function (username, password, done) {
+        User.findOne({email: username}).exec(function (err, user) {
             if (err) {
                 return done(err);
             }
